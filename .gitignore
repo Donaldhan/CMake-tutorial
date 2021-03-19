@@ -1,2 +1,48 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.xml
+
 .idea
+.git
 cmake-build-debug
+cmake-build-debug-cygwin
+cmake-build-debug-mingw
+cmake-build-release
+cmake-build-release-cygwin
+cmake-build-release-mingw
+build
+bin
+include
+# log
+*.log
+log

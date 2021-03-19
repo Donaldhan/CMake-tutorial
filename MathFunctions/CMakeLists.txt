@@ -12,3 +12,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # 添加主库
 add_library(MathFunctions mysqrt.cpp ${CMAKE_CURRENT_BINARY_DIR}/Table.h)
+
+
+install (TARGETS MathFunctions DESTINATION ${PROJECT_SOURCE_DIR}/build/bin)
+install (FILES MathFunctions.h DESTINATION ${PROJECT_SOURCE_DIR}/build/include)

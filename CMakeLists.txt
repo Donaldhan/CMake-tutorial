@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 2.6)
-project(CMake_tutorial)
+project(Tutorial)
 set(CMAKE_CXX_STANDARD 11)
 
 # 设置有关版本号的两个变量，版本号 1.0
 # 这两个变量将会在后面的操作中被插入到源代码中
 set(Tutorial_VERSION_MAJOR 1)
-set(Tutorial_VERSION_MINOR 0)
+set(Tutorial_VERSION_MINOR 3)
+set(Tutorial_VERSION_PATCH 8)
 
 # 提供一个选项：是否使用提供的数学函数？
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
@@ -39,6 +40,13 @@ endif (USE_MYMATH)
 set(SOURCE_FILES tutorial.cpp)
 add_executable(CMake_tutorial ${SOURCE_FILES})
 target_link_libraries(CMake_tutorial ${EXTRA_LIBS})
+
+
+# add the install targets
+install (TARGETS CMake_tutorial DESTINATION ${PROJECT_SOURCE_DIR}/build/bin)
+install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
+        DESTINATION ${PROJECT_SOURCE_DIR}/build/include)
+
 
 # 开启测试
 # include(CTest)
@@ -75,3 +83,5 @@ set (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
 set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
 include (CPack)
+
+
